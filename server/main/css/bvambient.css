@@ -1,0 +1,26 @@
+/* *****************************
+
+BVAmbient - VanillaJS Particle Background
+Developed by: Bruno Vieira
+
+**************************** */
+
+.bvambient_particle
+{
+	position: absolute;
+	pointer-events: none;
+	transition: top linear, left linear;
+
+}
+
+.visible {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 2s linear;
+  }
+
+  .hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 2s, opacity 2s linear;
+  }

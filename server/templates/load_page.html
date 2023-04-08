@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+ 
+    {% set val="/static/images/"+name+".jpg" %}
+    <div class="fade-in img translate" >
+            <img id=main src={{val}} width="250px" height="250px">
+            <h1>{{name}}</h1>
+            <h2>accuracy={{per}}%</h2>
+            
+            
+        </div>
+            
+            <a style="margin-left:40%;" href={{handles[0]}}><img style="border-radius: 5px" width=180px src="/static/images/Twitter.png"> </a>
+            <a style="margin-left:1rem ;" href={{handles[1]}}><img width=200px src="/static/images/inst.png"> </a>
+        <div class="container">
+        <!-- <a href={{handles[1]}}>Twitter</a> -->
+        
+        <!-- <table>
+            <tr>
+                <th>latest News</th>
+            </tr>
+            
+            <tr>
+                <td>>
+                    
+                </td>
+            </tr>
+        </table>
+    -->
+    
+    {% for i in news %}
+    <article class="card shadow curve">
+        <div>
+            <img src="{{i["img"]}}" alt="image">
+        </div>
+        
+        <div>
+            <p><strong><a target="_blank" href="{{i['link']}}">{{i['heading']}}</a></strong></p>
+            <span>
+                <i class="fab fa-twitter"></i>
+                    TOI INDIA
+            </span>
+        </div>
+    </article>
+    {% endfor%}
+
+    </div>
+    <script>
+        setTimeout(function() {
+  document.querySelector('.img').classList.add('translate');
+}, 3000);
+    </script>
+    </body>
+    </html>
